@@ -13,7 +13,7 @@ import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 
 @RestController
-@RequestMapping("/timeConversion")
+@RequestMapping("/timeConversions")
 public class UserTimeController {
         private final TimeServiceImpl timeService;
 
@@ -21,7 +21,7 @@ public class UserTimeController {
             this.timeService = timeService;
         }
 
-        @PostMapping("/convertToTime")
+        @PostMapping("/convertToTimes")
         public ResponseEntity<String> convertTimeToWords(@RequestBody String timeString) {
             try {
                 LocalTime time = LocalTime.parse(timeString, DateTimeFormatter.ofPattern("HH:mm"));
